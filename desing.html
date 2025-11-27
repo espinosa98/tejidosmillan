@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>TEJIDOS MILLAN - Especialistas en Tejido de Punto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: #13202c;
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #13202c;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.3rem;
+            color: #13202c;
+            margin-bottom: 2rem;
+        }
+
+        .hero-img img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .about-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-card h3 {
+            font-size: 1.5rem;
+            color: #13202c;
+            margin-bottom: 1rem;
+        }
+
+        .about-card p {
+            color: #475569;
+            line-height: 1.8;
+        }
+
+        .products-intro h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-feature h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .galeria-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .galeria-item figcaption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transform: translateY(0);
+        }
+
+        .service-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #13202c;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #64748b;
+            line-height: 1.8;
+        }
+
+        .process-step .number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #3b82f6, #13202c);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+        }
+
+        .process-step h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item .icon {
+            font-size: 2rem;
+            color: #3b82f6;
+        }
+
+        .contact-item h3 {
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 5px 20px rgba(37,211,102,0.5);
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37,211,102,0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: #13202c;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        /* Lightbox Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 3rem;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1e3a8a;
+                padding: 1rem;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Loader */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #13202c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .spinner {
+            border: 8px solid rgba(255,255,255,0.3);
+            border-top: 8px solid white;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+
+    <style>
+        /* Estilos de diseño personalizado */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .controls {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+        }
+
+        .controls h2 {
+            color: #122562;
+            margin-bottom: 25px;
+            font-size: 20px;
+            border-bottom: 3px solid #122562;
+            padding-bottom: 10px;
+        }
+
+        .control-group {
+            margin-bottom: 25px;
+        }
+
+        .control-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .control-group input[type="color"] {
+            width: 100%;
+            height: 45px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .control-group input[type="range"] {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #ddd;
+            outline: none;
+        }
+
+        .control-group input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .value-display {
+            display: inline-block;
+            background: #122562;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-left: 10px;
+            font-weight: 600;
+        }
+
+        .color-control .linea-label {
+            min-width: 65px;
+        }
+
+        .color-control input[type="color"] {
+            flex: 1;
+            height: 35px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .preview-container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 600px;
+        }
+
+        .preview-title {
+            color: #122562;
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        #collarCanvas {
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            background: white;
+        }
+
+        .download-btn {
+            margin-top: 30px;
+            padding: 15px 40px;
+            background: #122562;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #1a3580;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(18, 37, 98, 0.3);
+        }
+
+        .preset-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .preset-btn {
+            padding: 10px;
+            background: #f0f0f0;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .preset-btn:hover {
+            background: #122562;
+            color: white;
+            border-color: #122562;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .controls {
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+
+<header>
+    <div class="header-container">
+        <h1 class="logo">TEJIDOS MILLAN</h1>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav>
+            <ul id="nav-menu">
+                <li><a class="nav-link" href="index.html">Inicio</a></li>
+                <li><a class="nav-link" href="index.html#productos">Productos</a></li>
+                <li><a class="nav-link" href="index.html#servicios">Servicios</a></li>
+                <li><a class="nav-link" href="index.html#proceso">Proceso</a></li>
+                <li><a class="nav-link" href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container" id="desing">
+    <div class="controls">
+        <h2>⚙️ Parámetros del Tejido</h2>
+
+        <div class="control-group">
+            <label>Color Principal (Blanco)</label>
+            <input type="color" id="colorPrincipal" value="#FFFFFF">
+        </div>
+
+        <div class="control-group">
+            <label>Color Secundario (Azul Turquí)</label>
+            <input type="color" id="colorSecundario" value="#122562">
+        </div>
+
+        <div class="control-group">
+            <label>Color Tubular (Línea Superior)</label>
+            <input type="color" id="colorTubular" value="#FFFFFF">
+        </div>
+
+        <div class="control-group">
+            <label>Altura Tubular (px) <span class="value-display" id="alturaTubularDisplay">25</span></label>
+            <input type="range" id="alturaTubular" min="10" max="60" value="25" step="5">
+        </div>
+
+        <div class="control-group">
+            <label>Cantidad de Líneas <span class="value-display" id="cantidadDisplay">3</span></label>
+            <input type="range" id="cantidadLineas" min="1" max="8" value="3" step="1">
+        </div>
+
+        <div class="control-group" id="grosoresContainer">
+            <label style="margin-bottom: 15px;">Grosor Individual de Líneas</label>
+            <div id="grosoresLineas"></div>
+        </div>
+
+        <div class="control-group" id="coloresContainer">
+            <label style="margin-bottom: 15px;">Color Individual de Líneas</label>
+            <div id="coloresLineas"></div>
+        </div>
+
+        <div class="control-group">
+            <label>Espaciado entre Líneas <span class="value-display" id="espaciadoDisplay">3</span></label>
+            <input type="range" id="espaciadoLineas" min="1" max="10" value="3" step="1">
+        </div>
+
+        <div class="control-group">
+            <label>Altura del Cuello (px)</label>
+            <input type="number" id="alturaCuello" min="100" max="400" value="180" step="10">
+        </div>
+
+        <div class="control-group">
+            <label>Ancho del Cuello (px)</label>
+            <input type="number" id="anchoCuello" min="400" max="1000" value="700" step="50">
+        </div>
+
+        <div class="control-group">
+            <label>Ancho de Puños (px)</label>
+            <input type="number" id="anchoPunos" min="100" max="400" value="200" step="10">
+        </div>
+
+        <div class="control-group">
+            <label>Altura de Puños (px)</label>
+            <input type="number" id="alturaPunos" min="50" max="200" value="120" step="10">
+        </div>
+
+        <div class="control-group">
+            <label>Presets Rápidos</label>
+            <div class="preset-buttons">
+                <button class="preset-btn" onclick="aplicarPreset('clasico')">Clásico</button>
+                <button class="preset-btn" onclick="aplicarPreset('deportivo')">Deportivo</button>
+                <button class="preset-btn" onclick="aplicarPreset('elegante')">Elegante</button>
+                <button class="preset-btn" onclick="aplicarPreset('moderno')">Moderno</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="preview-container">
+        <h1 class="preview-title">Vista Previa del Cuello Tejido</h1>
+        <canvas id="collarCanvas"></canvas>
+
+        <div style="display: flex; gap: 30px; margin-top: 40px; align-items: center;">
+            <div style="text-align: center;">
+                <h2 style="color: #122562; font-size: 18px; margin-bottom: 15px;">Puño Izquierdo</h2>
+                <canvas id="punoIzquierdoCanvas" style="border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.15); background: white;"></canvas>
+            </div>
+            <div style="text-align: center;">
+                <h2 style="color: #122562; font-size: 18px; margin-bottom: 15px;">Puño Derecho</h2>
+                <canvas id="punoDerechoCanvas" style="border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.15); background: white;"></canvas>
+            </div>
+        </div>
+
+        <button class="download-btn" onclick="descargarImagen()">📥 Descargar Imagen PNG</button>
+        <button class="download-btn" style="background: #2C3E50; margin-left: 10px;" onclick="descargarConjunto()">📦 Descargar Conjunto Completo</button>
+    </div>
+</div>
+
+
+<footer>
+    <h2 style="margin-bottom: 1rem;">TEJIDOS MILLAN</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 1rem;">Especialistas en Tejido de Punto | Cuellos, Puños y Más</p>
+    <p>&copy; 2025 TEJIDOS MILLAN - Todos los derechos reservados</p>
+    <p style="margin-top: 1rem; opacity: 0.8;">Cali, Colombia | +57 312 248 1275</p>
+</footer>
+
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/573122481275?text=Hola,%20me%20interesa%20cotizar%20productos%20de%20tejido%20de%20punto"
+   class="whatsapp-float"
+   target="_blank"
+   title="Chatea con nosotros por WhatsApp">
+    💬
+</a>
+
+<!-- Lightbox Modal -->
+<div class="modal" id="imageModal" onclick="closeModal()">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage">
+</div>
+
+<script>
+    // Loader
+    window.addEventListener("load", function () {
+        const loader = document.getElementById("loader");
+        loader.style.opacity = "0";
+        loader.style.transition = "opacity 0.5s ease-out";
+
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 500);
+    });
+
+    // Mobile Menu Toggle
+    function toggleMenu() {
+        const menu = document.getElementById('nav-menu');
+        menu.classList.toggle('active');
+    }
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('nav-menu').classList.remove('active');
+        });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    // WhatsApp button pulse animation
+    const whatsappBtn = document.querySelector('.whatsapp-float');
+    setInterval(() => {
+        whatsappBtn.style.animation = 'none';
+        setTimeout(() => {
+            whatsappBtn.style.animation = 'pulse 1s ease';
+        }, 10);
+    }, 5000);
+
+    // Add pulse animation
+    const style = document.createElement('style');
+    style.textContent = `
+            @keyframes pulse {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.1); }
+            }
+        `;
+    document.head.appendChild(style);
+
+    // Add scroll indicator on hero section
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.25)';
+        } else {
+            header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+        }
+    });
+
+    // Dynamic year in footer
+    const currentYear = new Date().getFullYear();
+    document.querySelector('footer p').textContent = document.querySelector('footer p').textContent.replace('2025', currentYear);
+
+    // Counter animation for stats (if you want to add them later)
+    function animateValue(element, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            element.textContent = Math.floor(progress * (end - start) + start);
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    // Lazy loading for images
+    if ('loading' in HTMLImageElement.prototype) {
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.loading = 'lazy';
+        });
+    }
+
+    // Add tooltip for WhatsApp button
+    const tooltip = document.createElement('div');
+    tooltip.textContent = '¡Chatea con nosotros!';
+    tooltip.style.cssText = `
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: #1a1a1a;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            z-index: 998;
+        `;
+    document.body.appendChild(tooltip);
+
+    whatsappBtn.addEventListener('mouseenter', () => {
+        tooltip.style.opacity = '1';
+    });
+    whatsappBtn.addEventListener('mouseleave', () => {
+        tooltip.style.opacity = '0';
+    });
+</script>
+
+<script>
+    /* ----- script diseño personalizad ---- */
+    const canvas = document.getElementById('collarCanvas');
+    const ctx = canvas.getContext('2d');
+    const canvasPunoIzq = document.getElementById('punoIzquierdoCanvas');
+    const ctxPunoIzq = canvasPunoIzq.getContext('2d');
+    const canvasPunoDer = document.getElementById('punoDerechoCanvas');
+    const ctxPunoDer = canvasPunoDer.getContext('2d');
+
+    const config = {
+        colorPrincipal: '#FFFFFF',
+        colorSecundario: '#122562',
+        colorTubular: '#FFFFFF',
+        coloresIndividuales: ['#122562', '#122562', '#122562'],
+        alturaTubular: 25,
+        grosorLinea: 6,
+        grosoresIndividuales: [6, 6, 6],
+        cantidadLineas: 3,
+        espaciadoLineas: 3,
+        alturaCuello: 180,
+        anchoCuello: 700,
+        anchoPunos: 200,
+        alturaPunos: 120
+    };
+
+    function actualizarCanvas() {
+        // Cuello principal
+        canvas.width = config.anchoCuello;
+        canvas.height = config.alturaCuello;
+
+        ctx.fillStyle = config.colorPrincipal;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Dibujar tubular superior
+        // Parámetros: contexto, ancho del canvas, posición Y inicial, altura del tubular
+        dibujarTubular(ctx, canvas.width, 0, config.alturaTubular);
+
+        const totalLineas = config.cantidadLineas;
+        const espaciado = config.espaciadoLineas;
+        // Calcular posición Y después del tubular: 0px de margen superior + altura del tubular + 0px de separación
+        let yActual = 0 + config.alturaTubular + 0; // Después del tubular
+
+        for (let i = 0; i < totalLineas; i++) {
+            const grosor = config.grosoresIndividuales[i] || 6;
+            const colorLinea = config.coloresIndividuales[i] || config.colorSecundario;
+            dibujarLineaTejida(ctx, canvas.width, yActual, grosor, colorLinea);
+            yActual += grosor + espaciado;
+        }
+
+        // Puños
+        dibujarPuno(canvasPunoIzq, ctxPunoIzq);
+        dibujarPuno(canvasPunoDer, ctxPunoDer);
+    }
+
+    function dibujarPuno(canvas, ctx) {
+        canvas.width = config.anchoPunos;
+        canvas.height = config.alturaPunos;
+
+        ctx.fillStyle = config.colorPrincipal;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Dibujar tubular superior en los puños
+        // Parámetros: contexto, ancho del canvas del puño, posición Y inicial, altura del tubular
+        dibujarTubular(ctx, canvas.width, 0, config.alturaTubular);
+
+        const totalLineas = config.cantidadLineas;
+        const espaciado = config.espaciadoLineas;
+        // Calcular posición Y después del tubular: 0px de margen superior + altura del tubular + 0px de separación
+        let yActual = 0 + config.alturaTubular + 0; // Después del tubular
+
+        for (let i = 0; i < totalLineas; i++) {
+            const grosor = config.grosoresIndividuales[i] || 6;
+            const colorLinea = config.coloresIndividuales[i] || config.colorSecundario;
+            dibujarLineaTejida(ctx, canvas.width, yActual, grosor, colorLinea);
+            yActual += grosor + espaciado;
+        }
+    }
+
+    function dibujarTubular(contexto, ancho, y, altura) {
+        // Crear un patrón de textura para simular el tejido del tubular
+        const patternCanvas = document.createElement('canvas');
+        const patternCtx = patternCanvas.getContext('2d');
+        const patternSize = 4;
+
+        patternCanvas.width = patternSize;
+        patternCanvas.height = patternSize;
+
+        // Color base del tubular
+        patternCtx.fillStyle = config.colorTubular;
+        patternCtx.fillRect(0, 0, patternSize, patternSize);
+
+        // Textura más sutil para el tubular (5% de opacidad negra para dar efecto de tejido)
+        // Se dibujan pequeños cuadrados alternados para simular la trama del tejido de punto
+        /*patternCtx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        patternCtx.fillRect(0, 0, 2, 2); // Cuadrado superior izquierdo
+        patternCtx.fillRect(2, 2, 2, 2); // Cuadrado inferior derecho (patrón de tablero de ajedrez)*/
+
+        const pattern = contexto.createPattern(patternCanvas, 'repeat');
+        contexto.fillStyle = pattern;
+
+        // Dibujar el tubular en segmentos para simular la elasticidad del tejido
+        const segments = Math.floor(ancho / 7);
+        for (let seg = 0; seg < segments; seg++) {
+            const x = seg * 8;
+            // Pequeña variación en Y para simular la textura natural del tejido
+            const variance = Math.sin(seg * 0.3) * 0.3;
+            contexto.fillRect(x, y + variance, 8, altura);
+        }
+
+        // Bordes del tubular para darle definición
+        contexto.strokeStyle = 'rgba(0, 0, 0, 0.15)';
+        contexto.lineWidth = 0.5;
+        // Borde superior
+        contexto.beginPath();
+        contexto.moveTo(0, y);
+        contexto.lineTo(ancho, y);
+        contexto.stroke();
+
+        // Borde inferior
+        contexto.beginPath();
+        contexto.moveTo(0, y + altura);
+        contexto.lineTo(ancho, y + altura);
+        contexto.stroke();
+    }
+
+    function dibujarLineaTejida(contexto, ancho, y, grosor, colorLinea) {
+        const patternCanvas = document.createElement('canvas');
+        const patternCtx = patternCanvas.getContext('2d');
+        const patternSize = 4;
+
+        patternCanvas.width = patternSize;
+        patternCanvas.height = patternSize;
+
+        patternCtx.fillStyle = colorLinea;
+        patternCtx.fillRect(0, 0, patternSize, patternSize);
+
+        /*patternCtx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+        patternCtx.fillRect(0, 0, 2, 2);
+        patternCtx.fillRect(2, 2, 2, 2);*/
+
+        const pattern = contexto.createPattern(patternCanvas, 'repeat');
+        contexto.fillStyle = pattern;
+
+        const segments = Math.floor(ancho / 7);
+        for (let seg = 0; seg < segments; seg++) {
+            const x = seg * 8;
+            const variance = Math.sin(seg * 0.5) * 0.5;
+            contexto.fillRect(x, y + variance, 8, grosor);
+        }
+
+        contexto.strokeStyle = 'rgba(0, 0, 0, 0.15)';
+        contexto.lineWidth = 0.5;
+        contexto.beginPath();
+        contexto.moveTo(0, y);
+        contexto.lineTo(ancho, y);
+        contexto.stroke();
+
+        contexto.beginPath();
+        contexto.moveTo(0, y + grosor);
+        contexto.lineTo(ancho, y + grosor);
+        contexto.stroke();
+    }
+
+    function aplicarPreset(tipo) {
+        const presets = {
+            clasico: {
+                colorPrincipal: '#FFFFFF',
+                colorSecundario: '#122562',
+                colorTubular: '#FFFFFF',
+                coloresIndividuales: ['#122562', '#122562', '#122562'],
+                alturaTubular: 25,
+                grosorLinea: 6,
+                grosoresIndividuales: [6, 6, 6],
+                cantidadLineas: 3,
+                espaciadoLineas: 3
+            },
+            deportivo: {
+                colorPrincipal: '#F0F0F0',
+                colorSecundario: '#FF4444',
+                colorTubular: '#FFD700',
+                coloresIndividuales: ['#FF4444', '#FFD700'],
+                alturaTubular: 30,
+                grosorLinea: 8,
+                grosoresIndividuales: [8, 8],
+                cantidadLineas: 2,
+                espaciadoLineas: 5
+            },
+            elegante: {
+                colorPrincipal: '#FFFFFF',
+                colorSecundario: '#2C3E50',
+                colorTubular: '#E8E8E8',
+                coloresIndividuales: ['#2C3E50', '#34495E', '#2C3E50', '#34495E'],
+                alturaTubular: 20,
+                grosorLinea: 4,
+                grosoresIndividuales: [4, 4, 4, 4],
+                cantidadLineas: 4,
+                espaciadoLineas: 2
+            },
+            moderno: {
+                colorPrincipal: '#E8E8E8',
+                colorSecundario: '#00BCD4',
+                colorTubular: '#FFFFFF',
+                coloresIndividuales: ['#00BCD4', '#FF6B6B', '#00BCD4'],
+                alturaTubular: 35,
+                grosorLinea: 7,
+                grosoresIndividuales: [7, 7, 7],
+                cantidadLineas: 3,
+                espaciadoLineas: 4
+            }
+        };
+
+        const preset = presets[tipo];
+        Object.assign(config, preset);
+
+        document.getElementById('colorPrincipal').value = preset.colorPrincipal;
+        document.getElementById('colorSecundario').value = preset.colorSecundario;
+        document.getElementById('colorTubular').value = preset.colorTubular;
+        document.getElementById('alturaTubular').value = preset.alturaTubular;
+        document.getElementById('cantidadLineas').value = preset.cantidadLineas;
+        document.getElementById('espaciadoLineas').value = preset.espaciadoLineas;
+
+        actualizarDisplays();
+        generarControlesGrosores();
+        generarControlesColores();
+        actualizarCanvas();
+    }
+
+    function actualizarDisplays() {
+        document.getElementById('cantidadDisplay').textContent = config.cantidadLineas;
+        document.getElementById('espaciadoDisplay').textContent = config.espaciadoLineas;
+        document.getElementById('alturaTubularDisplay').textContent = config.alturaTubular;
+    }
+
+    function generarControlesGrosores() {
+        const container = document.getElementById('grosoresLineas');
+        container.innerHTML = '';
+
+        for (let i = 0; i < config.cantidadLineas; i++) {
+            const lineaDiv = document.createElement('div');
+            lineaDiv.className = 'linea-control';
+
+            const label = document.createElement('span');
+            label.className = 'linea-label';
+            label.textContent = `Línea ${i + 1}:`;
+
+            const slider = document.createElement('input');
+            slider.type = 'range';
+            slider.min = '2';
+            slider.max = '15';
+            slider.value = config.grosoresIndividuales[i] || 6;
+            slider.step = '1';
+
+            const valor = document.createElement('span');
+            valor.className = 'linea-valor';
+            valor.textContent = `${slider.value}px`;
+
+            slider.addEventListener('input', (e) => {
+                const nuevoGrosor = parseInt(e.target.value);
+                config.grosoresIndividuales[i] = nuevoGrosor;
+                valor.textContent = `${nuevoGrosor}px`;
+                actualizarCanvas();
+            });
+
+            lineaDiv.appendChild(label);
+            lineaDiv.appendChild(slider);
+            lineaDiv.appendChild(valor);
+            container.appendChild(lineaDiv);
+        }
+    }
+
+    function generarControlesColores() {
+        const container = document.getElementById('coloresLineas');
+        container.innerHTML = '';
+
+        for (let i = 0; i < config.cantidadLineas; i++) {
+            const colorDiv = document.createElement('div');
+            colorDiv.className = 'color-control';
+
+            const label = document.createElement('span');
+            label.className = 'linea-label';
+            label.textContent = `Línea ${i + 1}:`;
+
+            const colorPicker = document.createElement('input');
+            colorPicker.type = 'color';
+            colorPicker.value = config.coloresIndividuales[i] || config.colorSecundario;
+
+            colorPicker.addEventListener('input', (e) => {
+                config.coloresIndividuales[i] = e.target.value;
+                actualizarCanvas();
+            });
+
+            colorDiv.appendChild(label);
+            colorDiv.appendChild(colorPicker);
+            container.appendChild(colorDiv);
+        }
+    }
+
+    function descargarImagen() {
+        const link = document.createElement('a');
+        link.download = `cuello-tejido-${Date.now()}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    }
+
+    function descargarConjunto() {
+        // Crear un canvas grande que contenga todo
+        const conjuntoCanvas = document.createElement('canvas');
+        const conjuntoCtx = conjuntoCanvas.getContext('2d');
+
+        const padding = 50;
+        const espacioEntrePunos = 60;
+
+        conjuntoCanvas.width = Math.max(config.anchoCuello, config.anchoPunos * 2 + espacioEntrePunos) + padding * 2;
+        conjuntoCanvas.height = config.alturaCuello + config.alturaPunos + padding * 3;
+
+        // Fondo blanco
+        conjuntoCtx.fillStyle = '#FFFFFF';
+        conjuntoCtx.fillRect(0, 0, conjuntoCanvas.width, conjuntoCanvas.height);
+
+        // Dibujar cuello centrado
+        const cuelloX = (conjuntoCanvas.width - config.anchoCuello) / 2;
+        conjuntoCtx.drawImage(canvas, cuelloX, padding);
+
+        // Dibujar puños centrados
+        const punosY = config.alturaCuello + padding * 2;
+        const totalAnchoPunos = config.anchoPunos * 2 + espacioEntrePunos;
+        const punosStartX = (conjuntoCanvas.width - totalAnchoPunos) / 2;
+
+        conjuntoCtx.drawImage(canvasPunoIzq, punosStartX, punosY);
+        conjuntoCtx.drawImage(canvasPunoDer, punosStartX + config.anchoPunos + espacioEntrePunos, punosY);
+
+        // Agregar etiquetas
+        conjuntoCtx.fillStyle = '#122562';
+        conjuntoCtx.font = 'bold 20px Arial';
+        conjuntoCtx.textAlign = 'center';
+        conjuntoCtx.fillText('CUELLO', conjuntoCanvas.width / 2, padding - 15);
+        conjuntoCtx.fillText('PUÑOS', conjuntoCanvas.width / 2, punosY - 15);
+
+        // Descargar
+        const link = document.createElement('a');
+        link.download = `conjunto-uniforme-${Date.now()}.png`;
+        link.href = conjuntoCanvas.toDataURL('image/png');
+        link.click();
+    }
+
+    document.getElementById('colorPrincipal').addEventListener('input', (e) => {
+        config.colorPrincipal = e.target.value;
+        actualizarCanvas();
+    });
+
+    document.getElementById('colorSecundario').addEventListener('input', (e) => {
+        config.colorSecundario = e.target.value;
+        actualizarCanvas();
+    });
+
+    document.getElementById('colorTubular').addEventListener('input', (e) => {
+        config.colorTubular = e.target.value;
+        actualizarCanvas();
+    });
+
+    document.getElementById('alturaTubular').addEventListener('input', (e) => {
+        config.alturaTubular = parseInt(e.target.value);
+        actualizarDisplays();
+        actualizarCanvas();
+    });
+
+    document.getElementById('cantidadLineas').addEventListener('input', (e) => {
+        const nuevaCantidad = parseInt(e.target.value);
+        config.cantidadLineas = nuevaCantidad;
+
+        // Ajustar el array de grosores
+        if (config.grosoresIndividuales.length < nuevaCantidad) {
+            // Agregar más líneas con grosor predeterminado
+            while (config.grosoresIndividuales.length < nuevaCantidad) {
+                config.grosoresIndividuales.push(6);
+            }
+        } else if (config.grosoresIndividuales.length > nuevaCantidad) {
+            // Eliminar líneas sobrantes
+            config.grosoresIndividuales = config.grosoresIndividuales.slice(0, nuevaCantidad);
+        }
+
+        // Ajustar el array de colores
+        if (config.coloresIndividuales.length < nuevaCantidad) {
+            // Agregar más líneas con color predeterminado
+            while (config.coloresIndividuales.length < nuevaCantidad) {
+                config.coloresIndividuales.push(config.colorSecundario);
+            }
+        } else if (config.coloresIndividuales.length > nuevaCantidad) {
+            // Eliminar líneas sobrantes
+            config.coloresIndividuales = config.coloresIndividuales.slice(0, nuevaCantidad);
+        }
+
+        actualizarDisplays();
+        generarControlesGrosores();
+        generarControlesColores();
+        actualizarCanvas();
+    });
+
+    document.getElementById('espaciadoLineas').addEventListener('input', (e) => {
+        config.espaciadoLineas = parseInt(e.target.value);
+        actualizarDisplays();
+        actualizarCanvas();
+    });
+
+    document.getElementById('alturaCuello').addEventListener('input', (e) => {
+        config.alturaCuello = parseInt(e.target.value);
+        actualizarCanvas();
+    });
+
+    document.getElementById('anchoCuello').addEventListener('input', (e) => {
+        config.anchoCuello = parseInt(e.target.value);
+        actualizarCanvas();
+    });
+
+    document.getElementById('anchoPunos').addEventListener('input', (e) => {
+        config.anchoPunos = parseInt(e.target.value);
+        actualizarCanvas();
+    });
+
+    document.getElementById('alturaPunos').addEventListener('input', (e) => {
+        config.alturaPunos = parseInt(e.target.value);
+        actualizarCanvas();
+    });
+
+    // Inicializar
+    generarControlesGrosores();
+    generarControlesColores();
+    actualizarCanvas();
+</script>
+</body>
+</html>

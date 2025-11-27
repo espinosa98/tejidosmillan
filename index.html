@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>TEJIDOS MILLAN - Especialistas en Tejido de Punto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: #13202c;
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 80px 5%;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            gap: 3rem;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #13202c;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.3rem;
+            color: #13202c;
+            margin-bottom: 2rem;
+        }
+
+        .hero-img {
+            flex: 1;
+            text-align: center;
+            min-width: 300px;
+        }
+
+        .hero-img img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .cta-primary {
+            background: #13202c;
+            color: white;
+            box-shadow: 0 4px 15px rgba(59,130,246,0.4);
+        }
+
+        .cta-primary:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59,130,246,0.5);
+        }
+
+        .cta-secondary {
+            background: white;
+            color: #13202c;
+            border: 2px solid #13202c;
+        }
+
+        .cta-secondary:hover {
+            background: #3b82f6;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #13202c;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Section */
+        #nosotros {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .about-card {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-card h3 {
+            font-size: 1.5rem;
+            color: #13202c;
+            margin-bottom: 1rem;
+        }
+
+        .about-card p {
+            color: #475569;
+            line-height: 1.8;
+        }
+
+        /* Products Section */
+        .products-intro {
+            background: linear-gradient(135deg, #13202c 0%, #3b82f6 100%);
+            color: white;
+            padding: 4rem;
+            border-radius: 20px;
+            margin-bottom: 4rem;
+        }
+
+        .products-intro h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .products-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-feature {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .product-feature h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Gallery */
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .galeria-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.5s ease;
+            background: white;
+            height: 350px;
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .galeria-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .galeria-item figcaption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transform: translateY(0);
+        }
+
+        /* Services */
+        #servicios {
+            background: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .service-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #13202c;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #64748b;
+            line-height: 1.8;
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .process-step .number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #3b82f6, #13202c);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+        }
+
+        .process-step h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Form */
+        #contacto {
+            background: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .contact-item .icon {
+            font-size: 2rem;
+            color: #3b82f6;
+        }
+
+        .contact-item h3 {
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 5px 20px rgba(37,211,102,0.5);
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37,211,102,0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: #13202c;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        /* Lightbox Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 3rem;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1e3a8a;
+                padding: 1rem;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-button {
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Loader */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #13202c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .spinner {
+            border: 8px solid rgba(255,255,255,0.3);
+            border-top: 8px solid white;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .content-design {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .content-design h1 {
+            font-size: 2rem;
+        }
+
+        .content-design p {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content-design a {
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+
+<header>
+    <div class="header-container">
+        <h1 class="logo">TEJIDOS MILLAN</h1>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Cuellos y Puños Tejidos de Alta Calidad</h1>
+        <p class="subtitle">Especialistas en tejido de punto para la industria textil. Más de 25 años experiencia en el sector.</p>
+        <div class="cta-buttons">
+            <a href="#contacto" class="cta-button cta-primary">Cotizar Ahora</a>
+            <a href="#productos" class="cta-button cta-secondary">Ver Productos</a>
+        </div>
+    </div>
+    <div class="hero-img">
+        <img src="img/camiseta_inicio.png" alt="Productos tejidos de punto" />
+    </div>
+</section>
+
+<section id="design">
+    <h2 class="section-title">Crea tus diseños personalizados.</h2>
+    <div class="content-design">
+        <p class="description">
+            Personaliza colores, patrones y estilos en nuestro diseñador interactivo.
+            Ideal para confección, uniformes, moda y producción textil personalizada.
+        </p>
+
+        <ul class="features">
+            <li>🎨 Elige colores y combinaciones</li>
+            <li>🧵 Selecciona tipo de tejido y grosor</li>
+            <li>📏 Ajusta ancho y diseño del cuello o puño</li>
+            <li>⚙️ Vista previa en tiempo real</li>
+        </ul>
+
+        <a href="desing.html" class="cta-button cta-primary">
+            Crear Diseño Personalizado
+        </a>
+    </div>
+</section>
+
+<section id="nosotros">
+    <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+    <p class="section-subtitle">Somos líderes en la fabricación de tejidos de punto especializados, combinando experiencia, tecnología y compromiso con la calidad.</p>
+
+    <div class="about-content">
+        <div class="about-card">
+            <div class="icon">🏭</div>
+            <h3>+25 Años de Experiencia</h3>
+            <p>Años de trayectoria en la industria textil.</p>
+        </div>
+        <div class="about-card">
+            <div class="icon">⚡</div>
+            <h3>Tecnología de Punta</h3>
+            <p>Maquinaria especializada que garantiza precisión, consistencia y acabados perfectos en cada producto.</p>
+        </div>
+        <div class="about-card">
+            <div class="icon">✨</div>
+            <h3>Personalización Total</h3>
+            <p>Diseños únicos adaptados a tus necesidades: colores, texturas, medidas y patrones exclusivos.</p>
+        </div>
+        <div class="about-card">
+            <div class="icon">🚚</div>
+            <h3>Entregas Oportunas</h3>
+            <p>Cumplimiento garantizado en los tiempos de entrega a nivel nacional.</p>
+        </div>
+    </div>
+</section>
+
+<section id="productos">
+    <h2 class="section-title">Nuestros Productos Especializados</h2>
+    <p class="section-subtitle">Fabricamos todo tipo de tejidos de punto con la más alta calidad y precisión</p>
+
+    <div class="products-intro">
+        <h3>🧵 Especialidades en Tejido de Punto</h3>
+        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+            En TEJIDOS MILLAN dominamos todas las técnicas de tejido de punto para crear productos textiles excepcionales. Nuestra experiencia abarca desde cuellos y puños clásicos hasta diseños innovadores para la industria deportiva y de moda.
+        </p>
+
+        <div class="products-list">
+            <div class="product-feature">
+                <h4>👔 Cuellos Tejidos</h4>
+                <p>Cuellos tipo polo, camiseros, redondos y personalizados.</p>
+            </div>
+            <div class="product-feature">
+                <h4>🧤 Puños y Pretinas</h4>
+                <p>Puños elásticos para mangas, pretinas de cintura y bajo. Acabados profesionales con excelente recuperación.</p>
+            </div>
+            <div class="product-feature">
+                <h4>🧶 Variedad de Fibras</h4>
+                <p>Trabajamos algodón, poliéster, mezclas y fibras especiales según tu necesidad.</p>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="section-title" style="margin-top: 4rem; margin-bottom: 3rem;">Galería de Productos</h3>
+    <div class="galeria-grid">
+        <figure class="galeria-item" onclick="openModal(this)">
+            <img src="img/imagen_inicio_02.png" alt="Cuello tipo polo tejido">
+            <figcaption>Cuello Tipo Polo</figcaption>
+        </figure>
+        <figure class="galeria-item" onclick="openModal(this)">
+            <img src="img/imagen_inicio_02.png" alt="Puños tejidos elásticos">
+            <figcaption>Puños Elásticos - Jersey</figcaption>
+        </figure>
+        <figure class="galeria-item" onclick="openModal(this)">
+            <img src="img/imagen_inicio_02.png" alt="Cuello redondo personalizado">
+            <figcaption>Cuello Redondo Personalizado</figcaption>
+        </figure>
+        <figure class="galeria-item" onclick="openModal(this)">
+            <img src="img/imagen_inicio_02.png" alt="Pretina tejida para buso">
+            <figcaption>Pretina para Buso - Rib 1x1</figcaption>
+        </figure>
+        <figure class="galeria-item" onclick="openModal(this)">
+            <img src="img/imagen_inicio_02.png" alt="Tejido piqué deportivo">
+            <figcaption>Tejido Piqué Deportivo</figcaption>
+        </figure>
+        <figure class="galeria-item" onclick="openModal(this)">
+            <img src="img/imagen_inicio_02.png" alt="Cuello jacquard con diseño">
+            <figcaption>Cuello Jacquard con Diseño</figcaption>
+        </figure>
+    </div>
+</section>
+
+<section id="servicios">
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <p class="section-subtitle">Soluciones integrales para la industria textil</p>
+
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="icon">📐</div>
+            <h3>Diseño y Desarrollo</h3>
+            <p>Asesoramiento técnico completo desde la conceptualización hasta la producción. Creamos muestras y prototipos para validar diseños antes de la producción en serie.</p>
+        </div>
+        <div class="service-card">
+            <div class="icon">🏭</div>
+            <h3>Producción Industrial</h3>
+            <p>Capacidad para volúmenes pequeños, medianos y grandes. Mantenemos estándares de calidad consistentes en cada unidad producida.</p>
+        </div>
+        <div class="service-card">
+            <div class="icon">🎨</div>
+            <h3>Personalización</h3>
+            <p>Desarrollo de productos exclusivos según especificaciones: colores Pantone, medidas exactas, texturas especiales y diseños únicos.</p>
+        </div>
+        <div class="service-card">
+            <div class="icon">🔬</div>
+            <h3>Control de Calidad</h3>
+            <p>Inspección rigurosa en cada etapa del proceso. Certificamos resistencia, elasticidad, solidez del color y acabados perfectos.</p>
+        </div>
+        <div class="service-card">
+            <div class="icon">📦</div>
+            <h3>Logística Nacional</h3>
+            <p>Entregas puntuales en todo Colombia. Empaque especializado para proteger tus productos durante el transporte.</p>
+        </div>
+        <div class="service-card">
+            <div class="icon">🤝</div>
+            <h3>Asesoría Técnica</h3>
+            <p>Acompañamiento en selección de materiales, optimización de costos y mejora de procesos productivos.</p>
+        </div>
+    </div>
+</section>
+
+<section id="proceso">
+    <h2 class="section-title">Nuestro Proceso de Trabajo</h2>
+    <p class="section-subtitle">Trabajamos de manera profesional y organizada en cada proyecto</p>
+
+    <div class="process-steps">
+        <div class="process-step">
+            <div class="number">1</div>
+            <h3>Consulta Inicial</h3>
+            <p>Analizamos tus necesidades, especificaciones técnicas y presupuesto. Definimos tiempos y cantidades.</p>
+        </div>
+        <div class="process-step">
+            <div class="number">2</div>
+            <h3>Desarrollo de Muestra</h3>
+            <p>Creamos prototipos para tu aprobación. Ajustamos detalles hasta lograr el resultado perfecto.</p>
+        </div>
+        <div class="process-step">
+            <div class="number">3</div>
+            <h3>Producción</h3>
+            <p>Fabricamos tu pedido con control de calidad en cada etapa. Informes de avance en tiempo real.</p>
+        </div>
+        <div class="process-step">
+            <div class="number">4</div>
+            <h3>Entrega</h3>
+            <p>Empaque profesional y envío puntual. Seguimiento hasta que recibas tu pedido completo.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contacto">
+    <h2 class="section-title">Contáctanos</h2>
+    <p class="section-subtitle">¿Listo para tu próximo proyecto textil? Hablemos</p>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="icon">📱</div>
+                <div>
+                    <h3>WhatsApp / Teléfono</h3>
+                    <p style="font-size: 1.2rem; color: #3b82f6; font-weight: 600;">+57 312 248 1275</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="icon">📧</div>
+                <div>
+                    <h3>Email</h3>
+                    <p style="font-size: 1.2rem; color: #3b82f6; font-weight: 600;">tejidosmillan@gmail.com</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="icon">📍</div>
+                <div>
+                    <h3>Ubicación</h3>
+                    <p>Cali, Valle del Cauca, Colombia<br>Atención: Lunes a Viernes 8:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="icon">⏱️</div>
+                <div>
+                    <h3>Tiempo de Respuesta</h3>
+                    <p>Cotizaciones en menos de 24 horas<br>Muestras disponibles en 3-5 días</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <h2 style="margin-bottom: 1rem;">TEJIDOS MILLAN</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 1rem;">Especialistas en Tejido de Punto | Cuellos, Puños y Más</p>
+    <p>&copy; 2025 TEJIDOS MILLAN - Todos los derechos reservados</p>
+    <p style="margin-top: 1rem; opacity: 0.8;">Cali, Colombia | +57 312 248 1275</p>
+</footer>
+
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/573122481275?text=Hola,%20me%20interesa%20cotizar%20productos%20de%20tejido%20de%20punto"
+   class="whatsapp-float"
+   target="_blank"
+   title="Chatea con nosotros por WhatsApp">
+    💬
+</a>
+
+<!-- Lightbox Modal -->
+<div class="modal" id="imageModal" onclick="closeModal()">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage">
+</div>
+
+<script>
+    // Loader
+    window.addEventListener("load", function () {
+        const loader = document.getElementById("loader");
+        loader.style.opacity = "0";
+        loader.style.transition = "opacity 0.5s ease-out";
+
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 500);
+    });
+
+    // Mobile Menu Toggle
+    function toggleMenu() {
+        const menu = document.getElementById('nav-menu');
+        menu.classList.toggle('active');
+    }
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('nav-menu').classList.remove('active');
+        });
+    });
+
+    // Lightbox functionality
+    function openModal(element) {
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const img = element.querySelector('img');
+
+        modal.classList.add('active');
+        modalImg.src = img.src;
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('imageModal');
+        modal.classList.remove('active');
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.querySelectorAll('.about-card, .service-card, .galeria-item, .process-step').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+
+    // WhatsApp button pulse animation
+    const whatsappBtn = document.querySelector('.whatsapp-float');
+    setInterval(() => {
+        whatsappBtn.style.animation = 'none';
+        setTimeout(() => {
+            whatsappBtn.style.animation = 'pulse 1s ease';
+        }, 10);
+    }, 5000);
+
+    // Add pulse animation
+    const style = document.createElement('style');
+    style.textContent = `
+            @keyframes pulse {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.1); }
+            }
+        `;
+    document.head.appendChild(style);
+
+    // Add scroll indicator on hero section
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.15)';
+        } else {
+            header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+        }
+    });
+
+    // Gallery hover effect enhancement
+    document.querySelectorAll('.galeria-item').forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.zIndex = '10';
+        });
+        item.addEventListener('mouseleave', function() {
+            this.style.zIndex = '1';
+        });
+    });
+
+    // Form validation enhancement
+    const form = document.querySelector('.contact-form');
+    const inputs = form.querySelectorAll('input, textarea');
+
+    inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            if (this.value.trim() !== '') {
+                this.style.borderColor = '#10b981';
+            } else if (this.hasAttribute('required')) {
+                this.style.borderColor = '#ef4444';
+            }
+        });
+
+        input.addEventListener('focus', function() {
+            this.style.borderColor = '#3b82f6';
+        });
+    });
+
+    // Dynamic year in footer
+    const currentYear = new Date().getFullYear();
+    document.querySelector('footer p').textContent =
+        document.querySelector('footer p').textContent.replace('2025', currentYear);
+
+    // Add loading state to submit button
+    const submitBtn = document.querySelector('.submit-btn');
+    const originalBtnText = submitBtn.textContent;
+
+    form.addEventListener('submit', function() {
+        submitBtn.textContent = 'Enviando...';
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+            submitBtn.textContent = originalBtnText;
+            submitBtn.disabled = false;
+        }, 2000);
+    });
+
+    // Counter animation for stats (if you want to add them later)
+    function animateValue(element, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            element.textContent = Math.floor(progress * (end - start) + start);
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    // Lazy loading for images
+    if ('loading' in HTMLImageElement.prototype) {
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.loading = 'lazy';
+        });
+    }
+
+    // Add tooltip for WhatsApp button
+    const tooltip = document.createElement('div');
+    tooltip.textContent = '¡Chatea con nosotros!';
+    tooltip.style.cssText = `
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: #1a1a1a;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            z-index: 998;
+        `;
+    document.body.appendChild(tooltip);
+
+    whatsappBtn.addEventListener('mouseenter', () => {
+        tooltip.style.opacity = '1';
+    });
+    whatsappBtn.addEventListener('mouseleave', () => {
+        tooltip.style.opacity = '0';
+    });
+</script>
+</body>
+</html>
