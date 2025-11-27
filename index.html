@@ -989,40 +989,11 @@
 
     // Form validation enhancement
     const form = document.querySelector('.contact-form');
-    const inputs = form.querySelectorAll('input, textarea');
-
-    inputs.forEach(input => {
-        input.addEventListener('blur', function() {
-            if (this.value.trim() !== '') {
-                this.style.borderColor = '#10b981';
-            } else if (this.hasAttribute('required')) {
-                this.style.borderColor = '#ef4444';
-            }
-        });
-
-        input.addEventListener('focus', function() {
-            this.style.borderColor = '#3b82f6';
-        });
-    });
 
     // Dynamic year in footer
     const currentYear = new Date().getFullYear();
     document.querySelector('footer p').textContent =
         document.querySelector('footer p').textContent.replace('2025', currentYear);
-
-    // Add loading state to submit button
-    const submitBtn = document.querySelector('.submit-btn');
-    const originalBtnText = submitBtn.textContent;
-
-    form.addEventListener('submit', function() {
-        submitBtn.textContent = 'Enviando...';
-        submitBtn.disabled = true;
-
-        setTimeout(() => {
-            submitBtn.textContent = originalBtnText;
-            submitBtn.disabled = false;
-        }, 2000);
-    });
 
     // Counter animation for stats (if you want to add them later)
     function animateValue(element, start, end, duration) {
@@ -1070,6 +1041,31 @@
     });
     whatsappBtn.addEventListener('mouseleave', () => {
         tooltip.style.opacity = '0';
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    // Scroll suave
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                    // Cambiar URL sin el #
+                    history.replaceState(null, null, ' ');
+                }
+            });
+        });
     });
 </script>
 </body>

@@ -505,6 +505,179 @@
                 position: static;
             }
         }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1200px) {
+            .container {
+                grid-template-columns: 280px 1fr;
+                gap: 20px;
+            }
+
+            .preview-container {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .controls {
+                position: static;
+                order: 2;
+            }
+
+            .preview-container {
+                order: 1;
+                min-height: auto;
+            }
+
+            .preview-title {
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+                gap: 15px;
+            }
+
+            .controls {
+                padding: 20px;
+            }
+
+            .preview-container {
+                padding: 20px;
+            }
+
+            .preview-title {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            #collarCanvas {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .preview-container > div {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .download-btn {
+                padding: 12px 25px;
+                font-size: 14px;
+                margin-top: 20px;
+            }
+
+            .control-group {
+                margin-bottom: 20px;
+            }
+
+            .control-group label {
+                font-size: 13px;
+            }
+
+            .value-display {
+                font-size: 11px;
+                padding: 3px 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            .controls {
+                padding: 15px;
+            }
+
+            .preview-container {
+                padding: 15px;
+            }
+
+            .controls h2 {
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+
+            .preview-title {
+                font-size: 18px;
+            }
+
+            .control-group input[type="color"] {
+                height: 40px;
+            }
+
+            .control-group input[type="number"],
+            .control-group input[type="range"] {
+                padding: 8px;
+            }
+
+            .preset-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .preset-btn {
+                padding: 8px;
+                font-size: 12px;
+            }
+
+            /* Ajustar tamaño de canvas para móviles */
+            #collarCanvas {
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            #punoIzquierdoCanvas,
+            #punoDerechoCanvas {
+                width: 150px !important;
+                height: 60px !important;
+            }
+        }
+
+        /* Mejoras específicas para controles en móvil */
+        @media (max-width: 768px) {
+            .linea-control,
+            .color-control {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+            }
+
+            .linea-label {
+                min-width: 70px;
+                font-size: 12px;
+            }
+
+            .linea-valor {
+                font-size: 11px;
+                min-width: 35px;
+            }
+
+            .color-control input[type="color"] {
+                flex: 1;
+                height: 35px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .control-group input[type="range"] {
+                height: 8px;
+            }
+
+            .control-group input[type="number"] {
+                font-size: 16px; /* Previene zoom en iOS */
+                padding: 12px;
+            }
+        }
+
     </style>
 </head>
 
